@@ -18,7 +18,7 @@ app.on('ready', function() {
   // Create the browser window.
   mainWindow = new BrowserWindow({show: false, 'web-preferences': { plugins: true }});
 
-  mainWindow.loadUrl('https://play.spotify.edgekey.net/client/a9106c0/flash/player.swf');
+  mainWindow.loadUrl(process.env.SPOTIFY_FLASH_PLAYER_URL);
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function() {
@@ -35,5 +35,5 @@ app.on('ready', function() {
       res.writeHead(200, {'Content-Type': 'text/plain'});
       res.end(arg);
     });
-  }).listen(1337, '127.0.0.1');
+  }).listen(1335, '127.0.0.1');
 });
